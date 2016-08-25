@@ -11,6 +11,7 @@ struct node * next; /* pointer variable to store memory location of next node*/
 
 struct node * create(int); /* function declaration to create a node */
 void push(struct node **, int); /* function to push a node on the head of the linked list*/
+int length(struct node *); /* count the number of nodes in a linked list*/
 
 /* main method as a client that will create and use the list*/
 
@@ -21,6 +22,7 @@ push(&head, 12);
 printf("%d\n",head->data);
 push(&head, 17);
 printf("%d\n",head->data);
+printf("%d\n",length(head));
 return 0;
 }
 
@@ -39,4 +41,14 @@ void push(struct node ** headref, int x){
  new->data = x;
  new->next= *headref; /* pass the value of the next in the memory allocation of head*/
  *headref = new; 
+}
+
+/*share the head pointer*/
+int count(struct node * head){
+struct node * current = head; /*copy the head pointer to another one to itirate over and get the count*/
+int count = 0;
+while(current != NULL){
+current = current->next;
+count++;
+}
 }
