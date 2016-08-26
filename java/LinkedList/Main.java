@@ -5,8 +5,8 @@ public class Main{
     public static void main(String[] args){
     
         Node n1 = new Node(2);
-        Node n2 = new Node(3);
-        n1.nextlink(n2);
+        n1.append(10);
+        n1 = n1.push(12);
         n1.print();
     }
 }
