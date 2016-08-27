@@ -29,6 +29,17 @@ public class Node{
     return newNode;
     }
 
+
+    int length(){
+        Node b = this;
+     int count = 0;
+     while(b != null){
+         b = b.next;
+         count++;
+     }
+     return count;
+    }
+
     void print(){
     System.out.println("The data is "+data);
     System.out.println("The data in the next node is "+next.getdata());

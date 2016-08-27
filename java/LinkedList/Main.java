@@ -8,5 +8,6 @@ public class Main{
         n1.append(10);
         n1 = n1.push(12);
         n1.print();
+        System.out.println("This is the length "+n1.length());
     }
 }
