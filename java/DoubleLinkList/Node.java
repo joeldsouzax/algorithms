@@ -75,6 +75,19 @@ public class Node{
     tail.setPrevious(current);
     }
 
+    int getInfo(int n){
+    int count =  0;
+    Node current = this;
+    while(current.getNext() != null){
+    if(count == n){
+    break;
+    }
+    current = current.getNext();
+    count++;
+    }
+    return current.getData();
+   }
+
     void print(){
     System.out.println("data "+data);
     System.out.println("next  "+next);

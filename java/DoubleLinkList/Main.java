@@ -9,5 +9,6 @@ public class Main{
         System.out.println("length "+head.length());
         head.append(111);
         System.out.println("length "+head.length());
+        System.out.println("data of 3rd node is "+head.getInfo(2));
     }
 }
