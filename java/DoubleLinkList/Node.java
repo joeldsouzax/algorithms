@@ -38,6 +38,31 @@ public class Node{
     this.previous = previous;
     }
 
+    Node getNext(){
+    return next;
+    }
+
+    Node getPrevious(){
+    return previous;
+    }
+
+    Node push(int data){
+    Node head = new Node(data);
+    head.setNext(this);
+    return head;
+    }
+
+    int length(){
+    Node current = this;
+    int count = 0;
+
+    while(current != null){
+    current = current.getNext();
+    count++;
+    }
+    return count;
+    }
+
     void print(){
     System.out.println("data "+data);
     System.out.println("next  "+next);
