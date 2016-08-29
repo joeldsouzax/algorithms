@@ -11,6 +11,7 @@ struct node * create(int);
 void push(struct node **,int);
 int length(struct node *);
 void append(struct node **, int);
+int getdata(struct node **,int);
 
 int main(){
  struct node * head = create(10);
@@ -20,6 +21,7 @@ int main(){
  printf("length %d\n",length(head));
  append(&head,14);
  printf("this is the new length %d\n",length(head));
+ printf("get the data of the 3rd node %d\n",getdata(&head,2));
  return 0;
 }
 
@@ -62,4 +64,17 @@ current = current->next;
 }
 current->next = tail;
 tail->previous = current;
+}
+
+int getdata(struct node ** headref, int n){
+struct node * current = *headref;
+int count = 0;
+while(current->next != NULL){
+    current = current->next;
+    if(count == n){
+        break;
+    }
+    count++;
+}
+return current->data;
 }
