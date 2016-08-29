@@ -9,12 +9,14 @@ struct node * previous;
 
 struct node * create(int);
 void push(struct node **,int);
+int length(struct node *);
 
 int main(){
  struct node * head = create(10);
  printf("this is head data %d\n",head->data);
  push(&head,12);
  printf("this is the head data %d\n",head->data);
+ printf("length %d\n",length(head));
  return 0;
 }
 
@@ -35,4 +37,14 @@ new->next = *headref;
 new->previous = NULL;
 dummy->previous = new;
 *headref = new;
+}
+
+int length(struct node * head){
+struct node * current = head;
+int count = 0;
+while(current != NULL){
+current = current->next;
+count++;
+}
+return count;
 }
