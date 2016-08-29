@@ -10,6 +10,7 @@ struct node * previous;
 struct node * create(int);
 void push(struct node **,int);
 int length(struct node *);
+void append(struct node **, int);
 
 int main(){
  struct node * head = create(10);
@@ -17,6 +18,8 @@ int main(){
  push(&head,12);
  printf("this is the head data %d\n",head->data);
  printf("length %d\n",length(head));
+ append(&head,14);
+ printf("this is the new length %d\n",length(head));
  return 0;
 }
 
@@ -47,4 +50,16 @@ current = current->next;
 count++;
 }
 return count;
+}
+
+void append(struct node ** headref, int a){
+struct node * tail = malloc(sizeof(struct node));
+tail->data = a;
+tail->next = NULL;
+struct node * current = *headref;
+while(current->next !=NULL){
+current = current->next;
+}
+current->next = tail;
+tail->previous = current;
 }
