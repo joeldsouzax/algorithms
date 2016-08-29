@@ -49,6 +49,7 @@ public class Node{
     Node push(int data){
     Node head = new Node(data);
     head.setNext(this);
+    this.setPrevious(head);
     return head;
     }
 
@@ -61,6 +62,17 @@ public class Node{
     count++;
     }
     return count;
+    }
+
+    void append(int data){
+    Node tail= new Node(data);
+    Node current = this;
+    while(current.getNext() != null){
+    current = current.getNext();
+    }
+    current.setNext(tail);
+    tail.setNext(null);
+    tail.setPrevious(current);
     }
 
     void print(){

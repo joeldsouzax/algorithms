@@ -7,6 +7,7 @@ public class Main{
         head = head.push(10);
         head.print();
         System.out.println("length "+head.length());
-
+        head.append(111);
+        System.out.println("length "+head.length());
     }
 }
