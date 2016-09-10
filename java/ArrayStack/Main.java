@@ -26,6 +26,10 @@ public class Main{
         all.push(12);
         all.print();
         all.push(56);
+        Stack newstack = new Stack(20);
+        newstack.print();
+        newstack.push(10);
+        newstack.print();
     }
 
 }

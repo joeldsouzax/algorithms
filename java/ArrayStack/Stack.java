@@ -1,9 +1,21 @@
 
 public class Stack{
 
-    private int [] stackarray = new int[10];
+    private int [] stackarray;
     private int top = -1;
 
+    Stack(){
+    
+        stackarray = new int[10];
+    
+    }
+
+
+    Stack(int a){
+    
+        stackarray = new int[a];
+    
+    }
 
     void push(int a){
 
@@ -29,7 +41,7 @@ public class Stack{
 }
    void print(){
    
-   for(int i = 0; i<stackarray.length;i++){
+   for(int i = 0; i<=top;i++){
    System.out.println("stack: a "+"["+i+"] is "+stackarray[i]);
    }
    System.out.println("Top = "+top);
